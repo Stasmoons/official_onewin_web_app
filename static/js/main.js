@@ -1,8 +1,13 @@
 const urlParams = new URLSearchParams(window.location.search);
 
+const availableLocales = ["en", "ru"];
+
 const SUB1 = urlParams.get('sub1') || ''; 
 const API_URL = urlParams.get("api_url");
-const LOCALE_CODE = urlParams.get('locale_code') || 'en';
+
+let localeCode = urlParams.get('locale_code') || 'en';
+const LOCALE_CODE = availableLocales.indexOf(localeCode) == -1 ? "ru" : localeCode;
+
 const isAdm = urlParams.get('adm') || false;
 
 
