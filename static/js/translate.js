@@ -4,7 +4,7 @@ const translations = {
       "select-game": 'Select a game <br/>to <span class="accent-purple-text">receive</span> signals',
     },
     ru: {
-      "select-game": 'Выберите игру <br/>чтобы <span class="accent-purple-text">получить</span> сигналы',
+      "select-game": 'Выберите игру, <br/>чтобы <span class="accent-purple-text">получить</span> сигналы',
     },
     es: {
       "select-game": 'Seleccione un juego <br/>para <span class="accent-purple-text">recibir</span> señales',
