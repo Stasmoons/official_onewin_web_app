@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Choose a game</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: "Onest", sans-serif;
+            color: white;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        button, select, input, textarea {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-focus-ring-color: transparent;
+            outline: none;
+        }
+
+        .background {
+            position: fixed;
+            z-index: -2;
+            background: linear-gradient(175deg, #18026e 0%, #25038d 40%, #16002f 100%);
+            width: 100%;
+            height: 100%;
+        }
+        .background::before {
+            content: "";
+            position: absolute;
+            width: 200%; /* Увеличиваем ширину для эффекта смещения */
+            height: 200%; /* Увеличиваем высоту для покрытия при повороте */
+            left: -50%; 
+            background-image: url("static/icons/1w.png");
+            background-size: 16vh;
+            background-repeat: repeat;
+            opacity: 0.05;
+            transform: rotate(-10deg);
+            background-position: 0 0;
+            background-attachment: fixed;
+        }
+
+        .container {
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 8vh 12vw;
+            height: 100%;
+            position: relative;
+        }
+
+        .header {
+            width: 100%;
+            font-size: 3vmax;
+            margin-bottom: 5vh;
+        }
+
+        .accent-purple-text {
+            color: #a779f8;
+        }
+
+        .games-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* height: 100%; */
+            width: 100%;
+            gap: 3.5vh;
+            padding: 7vh 0;
+        }
+        
+        .games-container__row {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* ИГРЫ */
+        .game__card {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-decoration: none;
+            color: white;
+            gap: 0.5vh;
+        }
+
+        @media screen and (min-width: 768px) {
+            .game__card {
+                width: 25%;
+            }
+        }
+
+        .game__icon {
+            aspect-ratio: 1 / 1;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid transparent;
+            background: 
+                linear-gradient(#141519 0 0) padding-box,
+                linear-gradient(#4407c2, #a22ffd) border-box;
+        }
+        
+        .game__icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        } 
+        
+        .game__source {
+            display: flex;
+            align-items: end;
+            gap: 1vw;
+        }
+        
+        .game__source-icon {
+            height: 2vh;
+            width: auto;
+        }
+        
+        .game__source-name {
+            color: #9c9aab;
+            font-size: 1vh;
+        }
+        
+        .game__name {
+            font-size: 1.8vh;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <main class="container">
+        <h1 class="header" i18n-key="select-game">
+            Select a game <br/>to <span class="accent-purple-text">receive</span> signals
+        </h1>
+
+        <article class="games-container">
+            <div class="games-container__row">
+                <a href="./mines.html" class="game__card site-nav">
+                    <div class="game__icon">
+                        <img src="static/icons/mines.png"/>
+                    </div>
+                    <div class="game__source">
+                        <img class="game__source-icon" src="static/icons/1win-logo.png"/>
+                        <span class="game__source-name">1win Games</span>
+                    </div>
+                    <p class="game__name">Mines</p>
+                </a>
+    
+                <a href="./aviator.html" class="game__card site-nav">
+                    <div class="game__icon">
+                        <img src="static/icons/aviator.png"/>
+                    </div>
+                    <div class="game__source">
+                        <img class="game__source-icon" src="static/icons/1win-logo.png"/>
+                        <span class="game__source-name">1win Games</span>
+                    </div>
+                    <p class="game__name">Aviator</p>
+                </a>
+            </div>
+
+            <div class="games-container__row">
+                <a href="./lucky-jet.html" class="game__card site-nav">
+                    <div class="game__icon">
+                        <img src="static/icons/lucky-jet.png"/>
+                    </div>
+                    <div class="game__source">
+                        <img class="game__source-icon" src="static/icons/1win-logo.png"/>
+                        <span class="game__source-name">1win Games</span>
+                    </div>
+                    <p class="game__name">Lucky Jet</p>
+                </a>
+
+                <a href="./bombucks.html" class="game__card site-nav">
+                    <div class="game__icon">
+                        <img src="static/icons/bombucks.png"/>
+                    </div>
+                    <div class="game__source">
+                        <img class="game__source-icon" src="static/icons/1win-logo.png"/>
+                        <span class="game__source-name">1win Games</span>
+                    </div>
+                    <p class="game__name">Bombucks</p>
+                </a>
+            </div>
+        </article>
+    </main>
+        
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="static/js/main.js"></script>
+    <script src="static/js/translate.js"></script>
+</body>
+</html>
